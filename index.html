@@ -19,10 +19,9 @@
         var contenido = document.querySelector('#contenido')
         function traer() {
             fetch('texto.txt')
-            .then(data => data.text())
+            .then(res => res.text())
             .then(data => {
                 console.log(data)
-                contenido.innerHTML = `${data}`
             })
         }
     </script>
