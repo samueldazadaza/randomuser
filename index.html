@@ -9,9 +9,15 @@
     <title>Random User API</title>
 </head>
 <body>
-    <div class="container my-5 text-center">
-        <button class="btn btn-danger w-100" onclick="traer()">Obtener</button>
-        <div class="mt-5" id="contenido">
+    <div class="container text-center card text-dark bg-light mb-3" style="max-width: 23rem;">
+        <div class="card-header">Obtener API publica</div>
+        <div class="card-body">
+            <div class="container my-5 text-center">
+                <button class="btn btn-lg btn-danger w-100" style="max-width: 400px;" onclick="traer()">Obtener User</button>
+            </div>
+            <p class="card-text">
+                <div class="mt-5 fw-bold" id="contenido" style="min-height: 300px;"></div>
+            </p>
         </div>
     </div>
     <script>
@@ -22,9 +28,9 @@
             .then(data => {
                 console.log(data.results['0'].email)
                 contenido.innerHTML = `
-                <img src="${data.results['0'].picture.large}" alt="image random user" width="300px" class="fluid rounded-circle">
-                <p>Nombre: ${data.results['0'].name.first}</p>
-                <p>Apellido: ${data.results['0'].name.last}</p>
+                        <img src="${data.results['0'].picture.large}" alt="image random user" width="200px" class="fluid rounded-circle mb-3">
+                        <p>Nombre: ${data.results['0'].name.first}</p>
+                        <p>Apellido: ${data.results['0'].name.last}</p>
                 `
             })
         }
