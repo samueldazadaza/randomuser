@@ -18,8 +18,8 @@
     <script>
         var contenido = document.querySelector('#contenido')
         function traer() {
-            fetch('texto.txt')
-            .then(res => res.text())
+            fetch('https://randomuser.me/api/')
+            .then(res => res.json())
             .then(data => {
                 console.log(data)
             })
